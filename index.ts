@@ -15,6 +15,7 @@ import {
   date,
   phone,
   address,
+  output_directory,
 } from './secrets.ts'
 
 function get_underscore_company_name(company_name: string) {
@@ -150,4 +151,4 @@ const doc = new Document({
 })
 
 const buffer = await Packer.toBuffer(doc)
-fs.writeFileSync(`generated_documents/${document_title}.docx`, buffer)
+fs.writeFileSync(`${output_directory}/${document_title}.docx`, buffer)
