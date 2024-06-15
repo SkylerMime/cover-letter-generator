@@ -11,6 +11,13 @@ import type { fill_in_strings } from './interface_fill_in_strings.ts'
 import { defaults } from './secrets.ts'
 import { input } from '@inquirer/prompts'
 
+const date_format: Intl.DateTimeFormatOptions = {
+  weekday: undefined,
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+}
+
 function get_underscore_company_name(company_name: string) {
   let underscore_name = ''
   company_name.split('').forEach((character) => {
@@ -39,7 +46,7 @@ async function set_options(defaults: fill_in_strings) {
   const current_date = new Date()
   defaults.date = await input({
     message: "What is today's date?",
-    default: current_date.toDateString(),
+    default: current_date.toLocaleDateString('en-US', date_format),
   })
   return defaults
 }
