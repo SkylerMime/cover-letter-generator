@@ -124,7 +124,6 @@ async function make_document(fill_ins: fill_in_strings) {
           new Paragraph({ text: `${date}`, style: 'no_spacing' }),
           new Paragraph({
             text: `${company_name}`,
-            style: 'no_spacing',
           }),
         ],
       },
