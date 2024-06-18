@@ -36,11 +36,11 @@ async function set_options(defaults: fill_in_strings) {
     default: defaults.company_name,
   })
   defaults.role = await input({
-    message: 'What is the role you are applying for?',
+    message: "What is the role you are applying for? 'to have a ... position'",
     default: defaults.role,
   })
   defaults.company_projects = await input({
-    message: "What is the company's project?",
+    message: "What are the company's projects? 'development of company's ...'",
     default: defaults.company_projects,
   })
   const current_date = new Date()
@@ -145,18 +145,23 @@ async function make_document(fill_ins: fill_in_strings) {
           }),
           new Paragraph(
             `During my studies, I have gained experience in both low-level and high-level languages, ` +
-              `having begun my coding journey with Python before expanding my repertoire to use C++, C, and JavaScript ` +
+              `having begun my coding journey with Python before expanding my repertoire to use C++, C, and Java ` +
               `in successfully implementing challenging projects such as a simulated interpreter and a file system.`
           ),
           new Paragraph(
             `One of my significant achievements was on the development team for the BarterBuddy Android app,` +
               ` which we designed and created as a Software Development project using Agile methodologies.` +
-              ` This experience enhanced my skills in Java and JUnit, REST APIs, git, GitHub, database queries, feature development,` +
-              ` code reviews, refactoring, and collaborative coding environments. As a Lead Computer Science Tutor,` +
-              ` I further honed my communication and collaboration skills, providing a solid foundation for working effectively in a team.`
+              ` This experience enhanced my skills in Java and JUnit, REST APIs, git, GitHub, NoSQL database queries, feature development,` +
+              ` code reviews, refactoring, and collaborative coding environments.`
           ),
           new Paragraph(
-            `I bring experience in team full-stack development, unit testing and debugging, front-end frameworks, problem solving,` +
+            `As a Lead Computer Science Tutor, ` +
+              `I further honed my written and verbal communication and collaboration skills, providing a solid foundation for working effectively in a team. ` +
+              `In that role, I led several presentations on tutoring, and worked hands-on with college students to pass on ` +
+              `my knowledge of computer science and mathematics to them.`
+          ),
+          new Paragraph(
+            `I bring experience in team full-stack development, unit testing and debugging, JavaScript front-end frameworks, problem solving,` +
               ` and independent learning, all of which will be essential to my role in ${role}, should you choose to hire me.` +
               ` I am confident in my ability to meaningfully contribute to the development of ${company_name}’s ${company_projects}.`
           ),
